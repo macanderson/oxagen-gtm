@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Surfaces preview</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: #0A0A09;
+    color: #F2EEE5;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 15px; margin: 40px 0 16px; color: #DDD8CD; }
+  p.sub { color: #9B958A; margin: 0 0 24px; font-size: 13px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 480px);
+    gap: 20px;
+  }
+  figure { margin: 0; background: #181715; border: 1px solid #292722; border-radius: 8px; padding: 10px; }
+  figure canvas { display: block; width: 480px; height: 270px; border-radius: 4px; background: #10100F; }
+  figcaption { margin-top: 8px; font-size: 12px; color: #9B958A; }
+  figcaption b { color: #F2EEE5; font-weight: 500; }
+
+  .devices {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 340px);
+    gap: 24px;
+  }
+  .device-card {
+    background: #181715;
+    border: 1px solid #292722;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .device-card svg { display: block; width: 100%; height: auto; color: #D8CDBD; }
+  .device-card figcaption { margin-top: 10px; }
+  #status { position: fixed; top: 12px; right: 16px; font-size: 12px; color: #9B958A; }
+  #status.error { color: #e0664a; }
+</style>
+</head>
+<body>
+  <h1>Surfaces preview</h1>
+  <p class="sub">12 background textures (480x270, dark theme) and 7 device frames with a magenta rect painted into the reported screen rect.</p>
+  <div id="status">loading…</div>
+
+  <h2>Textures</h2>
+  <div class="grid" id="texture-grid"></div>
+
+  <h2>Device frames — magenta marks the reported screen rect, drawn under the frame</h2>
+  <div class="devices" id="device-grid"></div>
+
+  <script type="module">
+    import { TEXTURES, renderTexture, DEVICE_FRAMES } from "./surfaces-preview.js";
+
+    const statusEl = document.getElementById("status");
+    const errors = [];
+    window.addEventListener("error", (e) => errors.push(String(e.message || e.error)));
+
+    const textureGrid = document.getElementById("texture-grid");
+    for (const texture of TEXTURES) {
+      const figure = document.createElement("figure");
+      const canvas = document.createElement("canvas");
+      canvas.width = 480;
+      canvas.height = 270;
+      figure.appendChild(canvas);
+      const caption = document.createElement("figcaption");
+      caption.innerHTML = `<b>${texture.title}</b> — ${texture.id}`;
+      figure.appendChild(caption);
+      textureGrid.appendChild(figure);
+      try {
+        renderTexture(canvas, texture, "dark");
+      } catch (err) {
+        errors.push(`${texture.id}: ${err}`);
+      }
+    }
+
+    const deviceGrid = document.getElementById("device-grid");
+    for (const frame of DEVICE_FRAMES) {
+      const card = document.createElement("div");
+      card.className = "device-card";
+      const [, , vbW, vbH] = frame.viewBox.split(" ").map(Number);
+      const magentaRect = `<rect x="${frame.screen.x}" y="${frame.screen.y}" width="${frame.screen.w}" height="${frame.screen.h}" rx="${frame.screen.radius}" fill="#FF00FF"/>`;
+      const addressBarMark = frame.addressBar
+        ? `<rect x="${frame.addressBar.x}" y="${frame.addressBar.y}" width="${frame.addressBar.w}" height="${frame.addressBar.h}" fill="none" stroke="#FF00FF" stroke-width="1" stroke-dasharray="4 3"/>`
+        : "";
+      card.innerHTML = `
+        <svg viewBox="${frame.viewBox}" width="${vbW}" height="${vbH}">
+          ${magentaRect}
+          ${frame.svg}
+          ${addressBarMark}
+        </svg>
+        <figcaption><b>${frame.title}</b> — ${frame.id} — screen ${frame.aspect}</figcaption>
+      `;
+      deviceGrid.appendChild(card);
+    }
+
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        if (errors.length) {
+          statusEl.textContent = `errors: ${errors.join(" | ")}`;
+          statusEl.classList.add("error");
+        } else {
+          statusEl.textContent = `ok — ${TEXTURES.length} textures, ${DEVICE_FRAMES.length} device frames`;
+        }
+      }),
+    );
+  </script>
+</body>
+</html>

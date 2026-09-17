@@ -1,0 +1,607 @@
+{
+  "note": "Short-form ad lines, 40 to 48 characters, sized for a LinkedIn single-image headline. Registry-backed lines carry their registry id. Lines marked draft need an entry in oxagenai/oxagen-brand messages/ with evidence and owner before paid spend runs against them.",
+  "lengthTarget": {
+    "min": 40,
+    "max": 48,
+    "surface": "LinkedIn single-image headline"
+  },
+  "lines": [
+    {
+      "text": "Mission Control for your autonomous agents.",
+      "audience": [
+        "operator",
+        "platform"
+      ],
+      "clause": "none",
+      "family": "Primary",
+      "status": "approved",
+      "registry": "hero-headline",
+      "form": "statement",
+      "chars": 43,
+      "source": "derived"
+    },
+    {
+      "text": "The control plane for your agent workforce.",
+      "audience": [
+        "platform"
+      ],
+      "clause": "none",
+      "family": "Primary",
+      "status": "approved",
+      "registry": "hero-eyebrow",
+      "form": "statement",
+      "chars": 43,
+      "source": "derived"
+    },
+    {
+      "text": "Manage the workforce from Mission Control.",
+      "audience": [
+        "operator"
+      ],
+      "clause": "operations",
+      "family": "Primary",
+      "status": "approved",
+      "registry": "section-operations",
+      "form": "statement",
+      "chars": 42,
+      "source": "derived"
+    },
+    {
+      "text": "An identity per agent. A mandate per identity.",
+      "audience": [
+        "security",
+        "platform"
+      ],
+      "clause": "access",
+      "family": "Primary",
+      "status": "draft",
+      "form": "statement",
+      "chars": 46,
+      "source": "new"
+    },
+    {
+      "text": "One mandate: access, budget, equipment, record.",
+      "audience": [
+        "platform",
+        "operator"
+      ],
+      "clause": "none",
+      "family": "Primary",
+      "status": "draft",
+      "form": "statement",
+      "chars": 47,
+      "source": "new"
+    },
+    {
+      "text": "Don't hand your agents the keys. Set a mandate.",
+      "audience": [
+        "security"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "draft",
+      "registry": "access-keys",
+      "form": "statement",
+      "chars": 47,
+      "source": "derived"
+    },
+    {
+      "text": "The agent asks. A rule you wrote answers.",
+      "audience": [
+        "security"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "draft",
+      "form": "statement",
+      "chars": 41,
+      "source": "new"
+    },
+    {
+      "text": "Allowed, denied, or routed to a named person.",
+      "audience": [
+        "security"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "Set the authority behind each agent's action.",
+      "audience": [
+        "security",
+        "operator"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "approved",
+      "registry": "section-authority",
+      "form": "statement",
+      "chars": 45,
+      "source": "derived"
+    },
+    {
+      "text": "Identity, authority, and a record you can read.",
+      "audience": [
+        "security"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "variant",
+      "form": "statement",
+      "registry": "security-headline",
+      "note": "Registry line reads 'a record you can inspect.' (47). This shortens 'inspect' to 'read'; run the registry wording unless the shorter one is added.",
+      "chars": 47,
+      "source": "derived"
+    },
+    {
+      "text": "Where does a new agent's authority get set?",
+      "audience": [
+        "security",
+        "platform"
+      ],
+      "clause": "access",
+      "family": "Security",
+      "status": "draft",
+      "form": "question",
+      "chars": 43,
+      "source": "new"
+    },
+    {
+      "text": "See which agent spent what, and on whose behalf.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "approved",
+      "registry": "finance-headline",
+      "form": "statement",
+      "chars": 48,
+      "source": "derived"
+    },
+    {
+      "text": "Which agent spent it? Which run? Which person?",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "question",
+      "chars": 46,
+      "source": "new"
+    },
+    {
+      "text": "Read the bill down to the agent that made it.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "Spend per agent, per run, and per person.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "statement",
+      "chars": 41,
+      "source": "new"
+    },
+    {
+      "text": "Attribute agent spend to the run and the person.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "statement",
+      "chars": 48,
+      "source": "new"
+    },
+    {
+      "text": "Spend sits beside the agent that spent it.",
+      "audience": [
+        "finance",
+        "operator"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "statement",
+      "chars": 42,
+      "source": "new"
+    },
+    {
+      "text": "The number you report upward, with its rows.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Spend attribution",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "Every governed action has a price beside it.",
+      "audience": [
+        "finance",
+        "platform"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "The meter is a row, not a monthly estimate.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 43,
+      "source": "new"
+    },
+    {
+      "text": "Cost recorded per turn, step, and tool call.",
+      "audience": [
+        "finance",
+        "engineering"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "One row prices it and says who asked for it.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "Measured, reported, estimated: labelled as such.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 48,
+      "source": "new"
+    },
+    {
+      "text": "Same rows on the Spend page and the run page.",
+      "audience": [
+        "finance",
+        "operator"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "The finance lead and the operator read one row.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 47,
+      "source": "new"
+    },
+    {
+      "text": "The cost sits next to the rule that allowed it.",
+      "audience": [
+        "finance",
+        "security"
+      ],
+      "clause": "budget",
+      "family": "The meter",
+      "status": "draft",
+      "form": "statement",
+      "chars": 47,
+      "source": "new"
+    },
+    {
+      "text": "Budget, meter, and rule sit beside the agent.",
+      "audience": [
+        "finance",
+        "operator"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "A budget per agent, and a rule that stops it.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "Set the budget. Write the rule that stops it.",
+      "audience": [
+        "finance",
+        "operator"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "See the budget an agent has left this month.",
+      "audience": [
+        "finance",
+        "operator"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "A rule can stop the spend before the call runs.",
+      "audience": [
+        "finance",
+        "security"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 47,
+      "source": "new"
+    },
+    {
+      "text": "Route the spend decision to a person at a cap.",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 46,
+      "source": "new"
+    },
+    {
+      "text": "Hold an agent before its next chargeable call.",
+      "audience": [
+        "operator",
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Budget and the stop rule",
+      "status": "draft",
+      "form": "statement",
+      "chars": 46,
+      "source": "new"
+    },
+    {
+      "text": "Can you attribute agent spend below the account?",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Diagnostic questions",
+      "status": "draft",
+      "form": "question",
+      "chars": 48,
+      "source": "new"
+    },
+    {
+      "text": "Can you name the agent behind last month's bill?",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Diagnostic questions",
+      "status": "draft",
+      "form": "question",
+      "chars": 48,
+      "source": "new"
+    },
+    {
+      "text": "Who authorized the spend, and under which rule?",
+      "audience": [
+        "finance",
+        "security"
+      ],
+      "clause": "budget",
+      "family": "Diagnostic questions",
+      "status": "draft",
+      "form": "question",
+      "chars": 47,
+      "source": "new"
+    },
+    {
+      "text": "Which rule allowed the call you paid for?",
+      "audience": [
+        "finance",
+        "security"
+      ],
+      "clause": "budget",
+      "family": "Diagnostic questions",
+      "status": "draft",
+      "form": "question",
+      "chars": 41,
+      "source": "new"
+    },
+    {
+      "text": "Can you attribute last month's agent spend?",
+      "audience": [
+        "finance"
+      ],
+      "clause": "budget",
+      "family": "Diagnostic questions",
+      "status": "draft",
+      "form": "question",
+      "chars": 43,
+      "source": "new"
+    },
+    {
+      "text": "Give each agent the tools its work requires.",
+      "audience": [
+        "engineering"
+      ],
+      "clause": "equipment",
+      "family": "Equipment",
+      "status": "approved",
+      "registry": "section-equipment",
+      "form": "statement",
+      "chars": 44,
+      "source": "derived"
+    },
+    {
+      "text": "Give agents the business context work requires.",
+      "audience": [
+        "knowledge",
+        "engineering"
+      ],
+      "clause": "equipment",
+      "family": "Equipment",
+      "status": "approved",
+      "registry": "knowledge-headline",
+      "form": "statement",
+      "chars": 47,
+      "source": "derived"
+    },
+    {
+      "text": "A tool in the catalog is not a granted tool.",
+      "audience": [
+        "engineering",
+        "security"
+      ],
+      "clause": "equipment",
+      "family": "Equipment",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "Follow the action back to its authority.",
+      "audience": [
+        "security",
+        "platform"
+      ],
+      "clause": "record",
+      "family": "Record",
+      "status": "approved",
+      "registry": "section-audit",
+      "form": "statement",
+      "chars": 40,
+      "source": "derived"
+    },
+    {
+      "text": "Which rule answered? Who signed? One record.",
+      "audience": [
+        "security",
+        "operator"
+      ],
+      "clause": "record",
+      "family": "Record",
+      "status": "draft",
+      "form": "question",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "Every governed action is a row you can read.",
+      "audience": [
+        "platform",
+        "security"
+      ],
+      "clause": "record",
+      "family": "Record",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    },
+    {
+      "text": "Answer an agent's open request from one page.",
+      "audience": [
+        "operator"
+      ],
+      "clause": "operations",
+      "family": "Record",
+      "status": "draft",
+      "form": "statement",
+      "chars": 45,
+      "source": "new"
+    },
+    {
+      "text": "Agents do the work. Oxagen keeps the record.",
+      "audience": [
+        "platform"
+      ],
+      "clause": "record",
+      "family": "Record",
+      "status": "draft",
+      "form": "statement",
+      "chars": 44,
+      "source": "new"
+    }
+  ],
+  "cannotWrite": {
+    "title": "Claims this playbook will not generate",
+    "reason": "Finding 02 of the 2026-09-15 messaging review retired every savings promise that arrives without a measured workload. The compliant version of the waste angle is unattributed spend, not a lower bill.",
+    "banned": [
+      "Stop wasting money on AI.",
+      "Cut your agent bill.",
+      "Fewer tokens, same answers.",
+      "The next run costs less.",
+      "Can you explain your AI bill? Neither can your provider."
+    ],
+    "unlocks": "A savings claim becomes writable once FinOps supplies: the measured workload, the baseline, model and rate versions, sample size, the quality measure, and costs including retries and Oxagen fees."
+  }
+}
