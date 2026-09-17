@@ -99,6 +99,25 @@ function mulberry32(seed: number): () => number {
   };
 }
 
+/**
+ * Canvas centres a stroke on its coordinate, so a 1px line drawn on an integer
+ * coordinate splits across two pixel columns and each gets half the coverage.
+ * At the low alphas these textures run on (0.06–0.12) that halved coverage
+ * composites back to the exact background value and the line vanishes:
+ * `hairline-grid` rendered pixel-identical to `flat`. Snapping an odd-width
+ * stroke onto the half-pixel grid lands it inside one whole pixel, which is
+ * also what keeps a hairline crisp rather than blurred at export sizes.
+ */
+function crispWidth(lineWidth: number): number {
+  return Math.max(1, Math.round(lineWidth));
+}
+
+/** Aligns a stroke coordinate to the pixel grid for the given line width. */
+function snap(v: number, lineWidth: number): number {
+  const lw = crispWidth(lineWidth);
+  return lw % 2 === 1 ? Math.round(v) + 0.5 : Math.round(v);
+}
+
 function paintFlat(t: TextureCtx): void {
   const { ctx, w, h, colors } = t;
   ctx.save();
@@ -114,16 +133,17 @@ function paintHairlineGrid(t: TextureCtx): void {
   ctx.fillRect(0, 0, w, h);
   const size = 40 * scale;
   const alpha = theme === "dark" ? 0.08 : 0.06;
+  const lw = crispWidth(scale * 0.6);
   ctx.strokeStyle = rgba(colors.line, alpha);
-  ctx.lineWidth = Math.max(1, scale * 0.6);
+  ctx.lineWidth = lw;
   ctx.beginPath();
   for (let x = 0; x <= w; x += size) {
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, h);
+    ctx.moveTo(snap(x, lw), 0);
+    ctx.lineTo(snap(x, lw), h);
   }
   for (let y = 0; y <= h; y += size) {
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
+    ctx.moveTo(0, snap(y, lw));
+    ctx.lineTo(w, snap(y, lw));
   }
   ctx.stroke();
   ctx.restore();
@@ -157,33 +177,35 @@ function paintBlueprint(t: TextureCtx): void {
   const minorAlpha = theme === "dark" ? 0.08 : 0.06;
   const majorAlpha = theme === "dark" ? 0.22 : 0.18;
 
-  ctx.lineWidth = Math.max(1, scale * 0.6);
+  const minorW = crispWidth(scale * 0.6);
+  ctx.lineWidth = minorW;
   ctx.strokeStyle = rgba(colors.line, minorAlpha);
   ctx.beginPath();
   for (let x = 0, col = 0; x <= w; x += size, col++) {
     if (col % 5 === 0) continue;
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, h);
+    ctx.moveTo(snap(x, minorW), 0);
+    ctx.lineTo(snap(x, minorW), h);
   }
   for (let y = 0, row = 0; y <= h; y += size, row++) {
     if (row % 5 === 0) continue;
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
+    ctx.moveTo(0, snap(y, minorW));
+    ctx.lineTo(w, snap(y, minorW));
   }
   ctx.stroke();
 
-  ctx.lineWidth = Math.max(1, scale * 0.9);
+  const majorW = crispWidth(scale * 0.9);
+  ctx.lineWidth = majorW;
   ctx.strokeStyle = rgba(colors.rule, majorAlpha);
   ctx.beginPath();
   for (let x = 0, col = 0; x <= w; x += size, col++) {
     if (col % 5 !== 0) continue;
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, h);
+    ctx.moveTo(snap(x, majorW), 0);
+    ctx.lineTo(snap(x, majorW), h);
   }
   for (let y = 0, row = 0; y <= h; y += size, row++) {
     if (row % 5 !== 0) continue;
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
+    ctx.moveTo(0, snap(y, majorW));
+    ctx.lineTo(w, snap(y, majorW));
   }
   ctx.stroke();
   ctx.restore();
@@ -232,12 +254,13 @@ function paintLedgerRows(t: TextureCtx): void {
   ctx.fillRect(0, liftedIndex * rowH, w, rowH);
 
   const ruleAlpha = theme === "dark" ? 0.16 : 0.12;
+  const ruleW = crispWidth(scale * 0.6);
   ctx.strokeStyle = rgba(colors.rule, ruleAlpha);
-  ctx.lineWidth = Math.max(1, scale * 0.6);
+  ctx.lineWidth = ruleW;
   ctx.beginPath();
   for (let y = 0; y <= h; y += rowH) {
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
+    ctx.moveTo(0, snap(y, ruleW));
+    ctx.lineTo(w, snap(y, ruleW));
   }
   ctx.stroke();
   ctx.restore();
@@ -354,11 +377,12 @@ function paintPanelSplit(t: TextureCtx): void {
   ctx.fillStyle = rgba(colors.panel, bandAlpha);
   ctx.fillRect(w - bandW, 0, bandW, h);
 
+  const seamW = crispWidth(scale);
   ctx.strokeStyle = rgba(colors.rule, theme === "dark" ? 0.14 : 0.1);
-  ctx.lineWidth = Math.max(1, scale);
+  ctx.lineWidth = seamW;
   ctx.beginPath();
-  ctx.moveTo(w - bandW, 0);
-  ctx.lineTo(w - bandW, h);
+  ctx.moveTo(snap(w - bandW, seamW), 0);
+  ctx.lineTo(snap(w - bandW, seamW), h);
   ctx.stroke();
   ctx.restore();
 }
