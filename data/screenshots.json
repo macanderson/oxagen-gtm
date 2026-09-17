@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "file": "dashboard-dark.png",
+    "title": "Org dashboard — usage and spend",
+    "route": "/northwind-labs/dashboard",
+    "theme": "dark"
+  },
+  {
+    "file": "tools-dark.png",
+    "title": "Workbench — tool catalog",
+    "route": "/northwind-labs/default/workbench/tools",
+    "theme": "dark"
+  },
+  {
+    "file": "governance-dark.png",
+    "title": "Governance — policies and capabilities",
+    "route": "/northwind-labs/governance",
+    "theme": "dark"
+  },
+  {
+    "file": "security-dark.png",
+    "title": "Security — control posture",
+    "route": "/northwind-labs/security",
+    "theme": "dark"
+  },
+  {
+    "file": "security-audit-dark.png",
+    "title": "Security — audit trail",
+    "route": "/northwind-labs/security/audit",
+    "theme": "dark"
+  },
+  {
+    "file": "access-sessions-dark.png",
+    "title": "Access — live sessions",
+    "route": "/northwind-labs/access/sessions",
+    "theme": "dark"
+  },
+  {
+    "file": "billing-dark.png",
+    "title": "Billing — plan and subscription",
+    "route": "/northwind-labs/billing/subscription",
+    "theme": "dark"
+  },
+  {
+    "file": "billing-usage-dark.png",
+    "title": "Billing — metered usage",
+    "route": "/northwind-labs/billing/usage",
+    "theme": "dark"
+  },
+  {
+    "file": "marketplace-dark.png",
+    "title": "Marketplace",
+    "route": "/northwind-labs/default/marketplace",
+    "theme": "dark"
+  },
+  {
+    "file": "knowledge-dark.png",
+    "title": "Knowledge — sources",
+    "route": "/northwind-labs/default/knowledge/sources",
+    "theme": "dark"
+  },
+  {
+    "file": "agents-dark.png",
+    "title": "Workbench — agents",
+    "route": "/northwind-labs/default/workbench/agents",
+    "theme": "dark"
+  },
+  {
+    "file": "sessions-dark.png",
+    "title": "Workspace — sessions",
+    "route": "/northwind-labs/default/sessions",
+    "theme": "dark"
+  },
+  {
+    "file": "developer-mcp-dark.png",
+    "title": "Developer — MCP endpoint",
+    "route": "/northwind-labs/developer/mcp",
+    "theme": "dark"
+  },
+  {
+    "file": "developer-tokens-dark.png",
+    "title": "Developer — API tokens",
+    "route": "/northwind-labs/developer/tokens",
+    "theme": "dark"
+  },
+  {
+    "file": "members-dark.png",
+    "title": "Members",
+    "route": "/northwind-labs/members",
+    "theme": "dark"
+  },
+  {
+    "file": "workspaces-dark.png",
+    "title": "Workspaces",
+    "route": "/northwind-labs/workspaces",
+    "theme": "dark"
+  },
+  {
+    "file": "access-reviews-dark.png",
+    "title": "Access — access reviews",
+    "route": "/northwind-labs/access/reviews",
+    "theme": "dark"
+  },
+  {
+    "file": "login-dark.png",
+    "title": "Sign in",
+    "route": "/login",
+    "theme": "dark"
+  },
+  {
+    "file": "dashboard-light.png",
+    "title": "Org dashboard — usage and spend",
+    "route": "/northwind-labs/dashboard",
+    "theme": "light"
+  },
+  {
+    "file": "tools-light.png",
+    "title": "Workbench — tool catalog",
+    "route": "/northwind-labs/default/workbench/tools",
+    "theme": "light"
+  },
+  {
+    "file": "governance-light.png",
+    "title": "Governance — policies and capabilities",
+    "route": "/northwind-labs/governance",
+    "theme": "light"
+  },
+  {
+    "file": "security-light.png",
+    "title": "Security — control posture",
+    "route": "/northwind-labs/security",
+    "theme": "light"
+  },
+  {
+    "file": "security-audit-light.png",
+    "title": "Security — audit trail",
+    "route": "/northwind-labs/security/audit",
+    "theme": "light"
+  },
+  {
+    "file": "access-sessions-light.png",
+    "title": "Access — live sessions",
+    "route": "/northwind-labs/access/sessions",
+    "theme": "light"
+  },
+  {
+    "file": "billing-light.png",
+    "title": "Billing — plan and subscription",
+    "route": "/northwind-labs/billing/subscription",
+    "theme": "light"
+  },
+  {
+    "file": "billing-usage-light.png",
+    "title": "Billing — metered usage",
+    "route": "/northwind-labs/billing/usage",
+    "theme": "light"
+  },
+  {
+    "file": "marketplace-light.png",
+    "title": "Marketplace",
+    "route": "/northwind-labs/default/marketplace",
+    "theme": "light"
+  },
+  {
+    "file": "knowledge-light.png",
+    "title": "Knowledge — sources",
+    "route": "/northwind-labs/default/knowledge/sources",
+    "theme": "light"
+  },
+  {
+    "file": "agents-light.png",
+    "title": "Workbench — agents",
+    "route": "/northwind-labs/default/workbench/agents",
+    "theme": "light"
+  },
+  {
+    "file": "sessions-light.png",
+    "title": "Workspace — sessions",
+    "route": "/northwind-labs/default/sessions",
+    "theme": "light"
+  },
+  {
+    "file": "developer-mcp-light.png",
+    "title": "Developer — MCP endpoint",
+    "route": "/northwind-labs/developer/mcp",
+    "theme": "light"
+  },
+  {
+    "file": "developer-tokens-light.png",
+    "title": "Developer — API tokens",
+    "route": "/northwind-labs/developer/tokens",
+    "theme": "light"
+  },
+  {
+    "file": "members-light.png",
+    "title": "Members",
+    "route": "/northwind-labs/members",
+    "theme": "light"
+  },
+  {
+    "file": "workspaces-light.png",
+    "title": "Workspaces",
+    "route": "/northwind-labs/workspaces",
+    "theme": "light"
+  },
+  {
+    "file": "access-reviews-light.png",
+    "title": "Access — access reviews",
+    "route": "/northwind-labs/access/reviews",
+    "theme": "light"
+  },
+  {
+    "file": "login-light.png",
+    "title": "Sign in",
+    "route": "/login",
+    "theme": "light"
+  }
+]
