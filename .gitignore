@@ -4,3 +4,6 @@ out
 .vercel
 *.log
 .env*
+
+# build artifacts
+tsconfig.tsbuildinfo
